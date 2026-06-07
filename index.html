@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>SmartX AI</title>
+
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="themes.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
+
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+</head>
+
+<body class="theme-aurora">
+
+<div id="particles-js"></div>
+
+<!-- Mobile Menu -->
+<button id="mobileMenuBtn" class="mobile-menu-btn">
+☰
+</button>
+
+<!-- Sidebar -->
+<aside class="sidebar" id="sidebar">
+
+<div class="logo">
+<div class="logo-icon">🤖</div>
+
+<div>
+<h2>SmartX AI</h2>
+<p>Made By Muhammad Hasan AI</p>
+</div>
+</div>
+
+<button class="new-chat-btn" id="newChatBtn">
+➕ New Chat
+</button>
+
+<div class="history-title">
+Chat History
+</div>
+
+<div class="chat-history" id="chatHistory"></div>
+
+<div class="sidebar-bottom">
+
+<button class="sidebar-btn" id="exportBtn">
+📥 Export Chat
+</button>
+
+<button class="sidebar-btn" id="clearBtn">
+🗑 Delete All Chats
+</button>
+
+<button class="sidebar-btn" id="settingsBtn">
+⚙ Settings
+</button>
+
+</div>
+
+</aside>
+
+<!-- Main -->
+<main class="main">
+
+<!-- Header -->
+<header class="topbar">
+
+<div class="topbar-left">
+<div class="status-dot"></div>
+<span>SmartX AI Online</span>
+</div>
+
+<div class="topbar-right">
+
+<button id="themeBtn" class="icon-btn">
+🎨
+</button>
+
+<button id="voiceBtn" class="icon-btn">
+🎤
+</button>
+
+<button id="ttsBtn" class="icon-btn">
+🔊
+</button>
+
+</div>
+
+</header>
+
+<!-- Chat Area -->
+<section class="chat-container">
+
+<div id="welcomeScreen" class="welcome-screen">
+
+<div class="ai-orb"></div>
+
+<h1>SmartX AI</h1>
+
+<p>
+Advanced AI Assistant Powered by OpenRouter
+</p>
+
+<div class="quick-prompts">
+
+<button class="prompt-btn">
+Create a website
+</button>
+
+<button class="prompt-btn">
+Write code
+</button>
+
+<button class="prompt-btn">
+Explain AI
+</button>
+
+<button class="prompt-btn">
+Generate ideas
+</button>
+
+</div>
+
+</div>
+
+<div id="chatMessages" class="chat-messages"></div>
+
+<div id="typingIndicator" class="typing-indicator hidden">
+
+<div class="typing-bubble">
+<span></span>
+<span></span>
+<span></span>
+</div>
+
+</div>
+
+</section>
+
+<!-- Input Area -->
+<div class="input-container">
+
+<div class="input-box">
+
+<textarea
+id="messageInput"
+placeholder="Message SmartX AI..."
+rows="1"></textarea>
+
+<button id="sendBtn">
+➤
+</button>
+
+</div>
+
+<div class="bottom-info">
+
+<span id="charCount">
+0 Characters
+</span>
+
+<span>
+OpenRouter Connected
+</span>
+
+</div>
+
+</div>
+
+</main>
+
+<!-- Settings Modal -->
+<div class="modal hidden" id="settingsModal">
+
+<div class="modal-content">
+
+<div class="modal-header">
+
+<h2>SmartX AI Settings</h2>
+
+<button id="closeSettings">
+✕
+</button>
+
+</div>
+
+<div class="setting-group">
+
+<label>OpenRouter API Key</label>
+
+<input
+type="password"
+id="apiKeyInput"
+placeholder="sk-or-v1-xxxxxxxxxxxx">
+
+</div>
+
+<div class="setting-group">
+
+<label>Model</label>
+
+<select id="modelSelect">
+
+<option value="openai/gpt-4o-mini">
+GPT-4o Mini
+</option>
+
+<option value="anthropic/claude-sonnet-4">
+Claude Sonnet 4
+</option>
+
+<option value="google/gemini-2.5-pro">
+Gemini 2.5 Pro
+</option>
+
+<option value="meta-llama/llama-4-maverick">
+Llama 4 Maverick
+</option>
+
+</select>
+
+</div>
+
+<div class="setting-group">
+
+<label>Theme</label>
+
+<select id="themeSelect">
+
+<option value="aurora">
+Aurora
+</option>
+
+<option value="cyberpunk">
+Cyberpunk
+</option>
+
+<option value="neon">
+Neon
+</option>
+
+<option value="galaxy">
+Galaxy
+</option>
+
+<option value="glass">
+Glass
+</option>
+
+</select>
+
+</div>
+
+<button id="saveSettings" class="save-btn">
+Save Settings
+</button>
+
+</div>
+
+</div>
+
+<!-- Theme Picker -->
+<div class="theme-panel hidden" id="themePanel">
+
+<div class="theme-card aurora"
+data-theme="aurora">
+Aurora
+</div>
+
+<div class="theme-card cyberpunk"
+data-theme="cyberpunk">
+Cyberpunk
+</div>
+
+<div class="theme-card neon"
+data-theme="neon">
+Neon
+</div>
+
+<div class="theme-card galaxy"
+data-theme="galaxy">
+Galaxy
+</div>
+
+<div class="theme-card glass"
+data-theme="glass">
+Glass
+</div>
+
+</div>
+
+<!-- Hidden File Input -->
+<input
+type="file"
+id="imageInput"
+accept="image/*"
+hidden>
+
+<script src="app.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,345 @@
+/* ==========================================
+   SMARTX AI - THEMES.CSS
+   Made By Muhammad Hasan AI
+   ========================================== */
+
+/* ==========================================
+   AURORA THEME
+   ========================================== */
+
+body.theme-aurora{
+    --primary:#6c63ff;
+    --secondary:#00e5ff;
+
+    --text:#ffffff;
+    --muted:#b8c5e1;
+
+    --card:rgba(255,255,255,.08);
+    --border:rgba(255,255,255,.12);
+
+    background:
+    linear-gradient(
+    -45deg,
+    #0f172a,
+    #1e1b4b,
+    #0f766e,
+    #1e293b
+    );
+
+    background-size:400% 400%;
+
+    animation:
+    auroraMove 18s ease infinite;
+}
+
+/* ==========================================
+   CYBERPUNK THEME
+   ========================================== */
+
+body.theme-cyberpunk{
+    --primary:#00ff88;
+    --secondary:#00d9ff;
+
+    --text:#ffffff;
+    --muted:#9fd8cb;
+
+    --card:rgba(0,255,136,.08);
+    --border:rgba(0,255,136,.18);
+
+    background:
+    linear-gradient(
+    -45deg,
+    #000814,
+    #001d3d,
+    #003566,
+    #001219
+    );
+
+    background-size:400% 400%;
+
+    animation:
+    cyberMove 15s ease infinite;
+}
+
+body.theme-cyberpunk .logo-icon,
+body.theme-cyberpunk #sendBtn{
+    box-shadow:
+    0 0 25px rgba(0,255,136,.45);
+}
+
+/* ==========================================
+   NEON THEME
+   ========================================== */
+
+body.theme-neon{
+    --primary:#ff0080;
+    --secondary:#7928ca;
+
+    --text:#ffffff;
+    --muted:#e0b6ff;
+
+    --card:rgba(255,0,128,.08);
+    --border:rgba(255,0,128,.18);
+
+    background:
+    linear-gradient(
+    -45deg,
+    #1a001f,
+    #37003c,
+    #210124,
+    #130016
+    );
+
+    background-size:400% 400%;
+
+    animation:
+    neonMove 14s ease infinite;
+}
+
+body.theme-neon .logo-icon,
+body.theme-neon #sendBtn{
+    box-shadow:
+    0 0 35px rgba(255,0,128,.4);
+}
+
+/* ==========================================
+   GALAXY THEME
+   ========================================== */
+
+body.theme-galaxy{
+    --primary:#7c3aed;
+    --secondary:#3b82f6;
+
+    --text:#ffffff;
+    --muted:#b8b6ff;
+
+    --card:rgba(124,58,237,.08);
+    --border:rgba(124,58,237,.18);
+
+    background:
+    linear-gradient(
+    -45deg,
+    #0f0c29,
+    #24243e,
+    #302b63,
+    #1b1464
+    );
+
+    background-size:400% 400%;
+
+    animation:
+    galaxyMove 22s ease infinite;
+}
+
+body.theme-galaxy .logo-icon,
+body.theme-galaxy #sendBtn{
+    box-shadow:
+    0 0 35px rgba(124,58,237,.45);
+}
+
+/* ==========================================
+   GLASS THEME
+   ========================================== */
+
+body.theme-glass{
+    --primary:#ffffff;
+    --secondary:#c9d6ff;
+
+    --text:#ffffff;
+    --muted:#d7d7d7;
+
+    --card:rgba(255,255,255,.08);
+    --border:rgba(255,255,255,.18);
+
+    background:
+    linear-gradient(
+    -45deg,
+    #1f1c2c,
+    #2d3250,
+    #3a506b,
+    #5c677d
+    );
+
+    background-size:400% 400%;
+
+    animation:
+    glassMove 18s ease infinite;
+}
+
+body.theme-glass .sidebar,
+body.theme-glass .input-box,
+body.theme-glass .modal-content{
+    backdrop-filter:blur(30px);
+}
+
+/* ==========================================
+   THEME COMPONENT OVERRIDES
+   ========================================== */
+
+body[class*="theme-"] .sidebar{
+    background:
+    rgba(10,15,30,.72);
+}
+
+body[class*="theme-"] .topbar{
+    background:
+    rgba(255,255,255,.03);
+}
+
+body[class*="theme-"] .input-box{
+    background:
+    rgba(255,255,255,.06);
+}
+
+body[class*="theme-"] .ai .bubble{
+    background:
+    rgba(255,255,255,.07);
+}
+
+body[class*="theme-"] .history-item{
+    background:
+    rgba(255,255,255,.05);
+}
+
+body[class*="theme-"] .history-item:hover{
+    background:
+    rgba(255,255,255,.10);
+}
+
+/* ==========================================
+   AI ORB COLORS
+   ========================================== */
+
+body.theme-aurora .ai-orb{
+    background:
+    radial-gradient(
+    circle,
+    rgba(255,255,255,.9),
+    rgba(0,229,255,.45),
+    rgba(108,99,255,.35)
+    );
+}
+
+body.theme-cyberpunk .ai-orb{
+    background:
+    radial-gradient(
+    circle,
+    rgba(255,255,255,.9),
+    rgba(0,255,136,.45),
+    rgba(0,217,255,.35)
+    );
+}
+
+body.theme-neon .ai-orb{
+    background:
+    radial-gradient(
+    circle,
+    rgba(255,255,255,.9),
+    rgba(255,0,128,.45),
+    rgba(121,40,202,.35)
+    );
+}
+
+body.theme-galaxy .ai-orb{
+    background:
+    radial-gradient(
+    circle,
+    rgba(255,255,255,.9),
+    rgba(124,58,237,.45),
+    rgba(59,130,246,.35)
+    );
+}
+
+body.theme-glass .ai-orb{
+    background:
+    radial-gradient(
+    circle,
+    rgba(255,255,255,.95),
+    rgba(255,255,255,.35),
+    rgba(201,214,255,.25)
+    );
+}
+
+/* ==========================================
+   ANIMATIONS
+   ========================================== */
+
+@keyframes auroraMove{
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
+}
+
+@keyframes cyberMove{
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
+}
+
+@keyframes neonMove{
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
+}
+
+@keyframes galaxyMove{
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
+}
+
+@keyframes glassMove{
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
+}
+
+/* ==========================================
+   SPECIAL EFFECTS
+   ========================================== */
+
+body.theme-neon .status-dot{
+    box-shadow:
+    0 0 20px #ff0080;
+}
+
+body.theme-cyberpunk .status-dot{
+    box-shadow:
+    0 0 20px #00ff88;
+}
+
+body.theme-galaxy .status-dot{
+    box-shadow:
+    0 0 20px #7c3aed;
+}
+
+body.theme-aurora .status-dot{
+    box-shadow:
+    0 0 20px #00e5ff;
+}
+
+body.theme-glass .status-dot{
+    box-shadow:
+    0 0 20px #ffffff;
+}
+
+/* ==========================================
+   SMOOTH TRANSITIONS
+   ========================================== */
+
+body,
+.sidebar,
+.topbar,
+.input-box,
+.history-item,
+.bubble,
+.logo-icon,
+#sendBtn,
+.ai-orb{
+    transition:
+    background .4s ease,
+    color .4s ease,
+    border .4s ease,
+    box-shadow .4s ease,
+    transform .3s ease;
+}
